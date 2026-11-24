@@ -1,28 +1,28 @@
 # Sparsh
 
-**A web navigator for blind and low-vision people**
+**A general-purpose web navigator for blind and low-vision people**
 
 wHACKiest 2026 · Beyond the Browser · RV College of Engineering, Bengaluru
 
-Blind people using screen readers can spend minutes moving through menus, filters and repeated results to answer a basic question. **Which flight is cheapest, and what will I actually pay?** The departure time and total fare may be several controls apart. At checkout, finding both again can interrupt the decision at the very moment the details matter most.
+Blind and low-vision people can use screen readers to access web pages and still spend time figuring out where the useful information is. A university portal can bury a deadline behind menus. A city website can put a form below announcements. On a busy page, finding your bearings can take longer than the task you came to do.
 
-> **Find the fare. Check the details. Decide when to act.**
+> **Find your place. Get the facts. Decide what happens next.**
 
-Sparsh turns a web page into an explorable map and puts the most important fact first on a **simulated 32-cell braille line**. Ask by voice or keyboard, compare the three cheapest flights, and review the exact fare before you confirm a simulated booking.
+Sparsh gives you a map of the page you can explore by keyboard or touch. Ask a question by voice or text, hear progress as it happens, and review details at your own pace on a **simulated 32-cell braille line**. The goal is to make the same navigator useful for reading, research, comparison, and everyday web tasks.
 
-[Three-minute demo](#three-minutes-at-the-judging-table) · [Run locally](#try-the-mvp) · [Explore the architecture](#design)
+[Explore a real tab](#explore-a-real-tab) · [Run the MVP](#try-the-mvp) · [Try the sample workflow](#three-minutes-at-the-judging-table) · [Explore the architecture](#design)
 
-## What Sparsh changes
+## What you can try today
 
-| For a blind traveler | What the MVP demonstrates |
+| What you want to do | What the MVP demonstrates |
 | --- | --- |
-| **Get oriented.** Find the results without stepping through every control. | A spatial page map with labeled regions, keyboard navigation and spoken updates you can turn on. The Chrome side panel can capture landmarks from a real tab. |
-| **Get the price first.** Compare options and revisit the exact fare at your own pace. | The travel demo ranks the three cheapest flights. The 32-cell line paginates the fare, airline and departure, with visible text alongside the braille. |
-| **Stay in control.** Review the choice before committing. | Sparsh narrates the simulated checkout and waits at **Confirm** or **Cancel**. Six context buttons adapt as you go, and **My button** can replay a saved shortcut. |
+| **Get oriented on a web page.** | Open Sparsh on a regular Chrome tab to map visible landmarks and jump to a region. Try a news article, a college website, or a public information page. The map depends on the page’s structure. |
+| **Review details at your own pace.** | Use the region descriptions and paginated output. The travel sample shows how a ranked result can put an exact value first on the 32-cell line, with visible text alongside the braille. |
+| **Choose when to act.** | The sample workflow shows six adaptive controls, a reusable shortcut, and a narrated action that pauses for explicit confirmation. |
 
 ## What ships for wHACKiest
 
-A Chrome extension, a browser-based navigator and a modular FastAPI planner. The judge demo uses sample flights and a rules-based planner with a bundled fallback. It runs without an API key or braille hardware. The travel workflow demonstrates how page orientation, precise braille output and user approval can work together in one interface.
+A Chrome extension for real-tab landmark navigation, a browser-based navigator, and a modular FastAPI planner. **The travel workflow is the bundled end-to-end example.** Comparison and simulated checkout use sample flights and a rules-based planner with a bundled fallback. The demo runs without an API key or braille hardware.
 
 ## Try the MVP
 
@@ -42,6 +42,8 @@ python -m uvicorn backend.main:app --host 127.0.0.1 --port 8000
 Open [the navigator](http://127.0.0.1:8000/navigator/) or [the planner API docs](http://127.0.0.1:8000/docs). For a service-free demo, serve the same navigator with `python -m http.server 8000 --bind 127.0.0.1 --directory extension` and open [the local preview](http://127.0.0.1:8000/). The navigator will use its bundled planner. Use one server at a time.
 
 ### Three minutes at the judging table
+
+Use the travel sample to see navigation, comparison, and confirmation in one flow.
 
 | Try this | Look for this |
 | --- | --- |
