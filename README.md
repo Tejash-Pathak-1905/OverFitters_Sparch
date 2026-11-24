@@ -1,16 +1,28 @@
-<div align="center">
-
 # Sparsh
 
-**A web navigator designed around a 32-cell braille line**
+**A web navigator for blind and low-vision people**
 
-wHACKiest 2026 · Beyond the Browser · RV College of Engineering
+wHACKiest 2026 · Beyond the Browser · RV College of Engineering, Bengaluru
 
-⠎⠏⠁⠗⠎⠓
+Blind people using screen readers can spend minutes moving through menus, filters and repeated results to answer a basic question. **Which flight is cheapest, and what will I actually pay?** The departure time and total fare may be several controls apart. At checkout, finding both again can interrupt the decision at the very moment the details matter most.
 
-</div>
+> **Find the fare. Check the details. Decide when to act.**
 
-A flight search can bury one useful answer under filters, repeated cards and checkout prompts. Sparsh brings the page layout, the cheapest options and the exact checkout total into one navigator. Voice carries progress updates. The simulated braille line gives the user a place to review details at their own pace.
+Sparsh turns a web page into an explorable map and puts the most important fact first on a **simulated 32-cell braille line**. Ask by voice or keyboard, compare the three cheapest flights, and review the exact fare before you confirm a simulated booking.
+
+[Three-minute demo](#three-minutes-at-the-judging-table) · [Run locally](#try-the-mvp) · [Explore the architecture](#design)
+
+## What Sparsh changes
+
+| For a blind traveler | What the MVP demonstrates |
+| --- | --- |
+| **Get oriented.** Find the results without stepping through every control. | A spatial page map with labeled regions, keyboard navigation and spoken updates you can turn on. The Chrome side panel can capture landmarks from a real tab. |
+| **Get the price first.** Compare options and revisit the exact fare at your own pace. | The travel demo ranks the three cheapest flights. The 32-cell line paginates the fare, airline and departure, with visible text alongside the braille. |
+| **Stay in control.** Review the choice before committing. | Sparsh narrates the simulated checkout and waits at **Confirm** or **Cancel**. Six context buttons adapt as you go, and **My button** can replay a saved shortcut. |
+
+## What ships for wHACKiest
+
+A Chrome extension, a browser-based navigator and a modular FastAPI planner. The judge demo uses sample flights and a rules-based planner with a bundled fallback. It runs without an API key or braille hardware. The travel workflow demonstrates how page orientation, precise braille output and user approval can work together in one interface.
 
 ## Try the MVP
 
