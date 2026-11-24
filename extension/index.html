@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sparsh Navigator</title>
+  <link rel="stylesheet" href="./ui/style.css">
+</head>
+<body>
+  <a class="skip" href="#command">Skip to command</a>
+  <main>
+    <header class="masthead">
+      <div><p class="eyebrow">W HACKIEST · ACCESSIBILITY</p><h1>Sparsh<span>.</span></h1></div>
+      <label class="voice"><input id="speech" type="checkbox"> Speak updates</label>
+    </header>
+    <div class="toolbar"><button id="demo" type="button">Travel demo</button><button id="capture" type="button" hidden>Read active tab</button></div>
+    <div class="layout">
+      <section class="device" aria-labelledby="map-title">
+        <div class="section-head"><h2 id="map-title">Page map</h2><span id="source"></span></div>
+        <p class="hint">Explore by touch, hover or focus. Press Enter or double-click to jump.</p>
+        <div id="map" class="map" aria-label="Page regions"></div>
+        <p id="region" class="region" aria-live="polite"></p>
+
+        <div class="section-head"><h2>Braille line</h2><span id="position"></span></div>
+        <div id="braille" class="braille" aria-hidden="true"></div>
+        <div class="line-nav"><p id="line"></p><button id="more" type="button">Next line</button></div>
+        <div id="actions" class="actions" aria-label="Context actions"></div>
+      </section>
+      <section class="console" aria-labelledby="command-title">
+        <h2 id="command-title">Ask Sparsh</h2>
+        <form id="prompt">
+          <label class="hint" for="command">Try “compare the three cheapest”</label>
+          <div class="input-row"><input id="command" maxlength="250" required autocomplete="off"><button type="submit">Run</button></div>
+        </form>
+        <button id="listen" type="button">Use microphone</button>
+        <p id="status" role="status"></p>
+        <div id="output"></div>
+        <h2>Activity</h2>
+        <ol id="activity" aria-label="Recent activity"></ol>
+      </section>
+    </div>
+  </main>
+  <script type="module" src="./ui/app.js"></script>
+</body>
+</html>

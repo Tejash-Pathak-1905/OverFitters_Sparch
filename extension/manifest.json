@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Sparsh Navigator",
+  "version": "0.1.0",
+  "description": "Explore web pages with a simulated braille navigator.",
+  "permissions": ["activeTab", "scripting", "sidePanel", "storage"],
+  "host_permissions": ["http://127.0.0.1:8000/*"],
+  "action": {"default_title":"Open Sparsh"},
+  "background": {"service_worker":"worker.js"},
+  "side_panel": {"default_path":"index.html"}
+}
